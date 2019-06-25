@@ -1,0 +1,1225 @@
+STAAD SPACE
+START JOB INFORMATION
+ENGINEER DATE 16-Jun-19
+END JOB INFORMATION
+INPUT WIDTH 79
+UNIT METER KN
+JOINT COORDINATES
+5 0 0 0; 9 0.889 0 0; 11 1.7526 0 0; 13 2.4892 0 0; 15 0 0 1.2192;
+16 0.889 0 1.2192; 17 1.7526 0 1.2192; 18 2.4892 0 1.2192; 19 -0.803 0 0;
+20 5.2932 0 0; 21 0 0 -1.2; 22 1.7526 0 -1.2; 23 0 -1 0; 24 1.7526 -1 0;
+25 0 -4.5 0; 26 1.7526 -4.5 0;
+MEMBER INCIDENCES
+6 15 16; 7 5 15; 10 17 18; 11 9 16; 14 11 17; 17 13 18; 25 16 17; 26 5 9;
+27 9 11; 28 11 13; 29 19 5; 30 13 20; 31 21 5; 32 22 11; 34 5 23; 35 11 24;
+36 23 15; 37 24 17; 38 23 25; 39 24 26;
+DEFINE MATERIAL START
+ISOTROPIC A36
+E 2.05e+008
+POISSON 0.3
+DENSITY 76.8195
+ALPHA 1.2e-005
+DAMP 0.03
+G 7.88462e+007
+TYPE STEEL
+STRENGTH FY 253200 FU 407800 RY 1.5 RT 1.2
+END DEFINE MATERIAL
+MEMBER PROPERTY AMERICAN
+6 7 10 11 14 17 25 TO 32 34 TO 39 TABLE ST C8X13
+CONSTANTS
+BETA 180 MEMB 6 7 10 11 25 TO 31
+MATERIAL A36 ALL
+SUPPORTS
+19 TO 22 25 26 FIXED BUT MX MY MZ
+MEMBER RELEASE
+11 36 37 START MY MZ
+11 36 37 END MY MZ
+DEFINE REFERENCE LOADS
+***********************************************
+LOAD R31 LOADTYPE Fluids  TITLE FLUID LOAD - NORMAL OPERATING - FEED PIPE (FFP)
+***********************************************
+***********************************************
+LOAD R32 LOADTYPE Fluids  TITLE FLUID LOAD - NORMAL OPERATING - DROP BOX (FDB)
+***********************************************
+***********************************************
+LOAD R33 LOADTYPE Fluids  TITLE FLUID LOAD - NORMAL OPERATING - FEED WELL (FFW)
+***********************************************
+***********************************************
+LOAD R34 LOADTYPE Fluids  TITLE FLUID LOAD - WATER PRESSURE - TANK (FW)
+***********************************************
+***********************************************
+LOAD R61 LOADTYPE Seismic  TITLE EQ LOADS IN TRANSVERSE - STRUCTURE (+ET)
+***********************************************
+LOAD R62 LOADTYPE Seismic  TITLE EQ LOADS IN LONGITUDINAL - STRUCTURE (+EL)
+***********************************************
+LOAD R63 LOADTYPE Seismic  TITLE EQ LOADS IN VERTICAL - STRUCTURE (EV)
+***********************************************
+LOAD R64 LOADTYPE Seismic  TITLE EQ LOADS IN TRANSVERSE - CONE FLUIDS (+ET)
+LOAD R65 LOADTYPE Seismic  TITLE EQ LOADS IN TRANSVERSE - CONE FLUIDS (-ET)
+***********************************************
+** PRESSURES IN CONICAL PORTION
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R66 LOADTYPE Seismic  TITLE EQ LOADS IN LONG. - CONE FLUIDS (+EL)
+LOAD R67 LOADTYPE Seismic  TITLE EQ LOADS IN LONG. - CONE FLUIDS (-EL)
+***********************************************
+** PRESSURES IN CONICAL PORTION
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R68 LOADTYPE Seismic  TITLE EQ LOADS IN VERTICAL - TANK (EV)
+***********************************************
+** PRESSURES IN CONICAL PORTION
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R74 LOADTYPE None  TITLE EQ LOADS IN TRANSVERSE-TANK WALL(+ETI)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : IMPULSIVE
+** DIRECTION : TRANSVERSE (+VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R75 LOADTYPE None  TITLE EQ LOADS IN TRANSVERSE-TANK WALL(-ETI)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : IMPULSIVE
+** DIRECTION : TRANSVERSE (-VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R76 LOADTYPE None  TITLE EQ LOADS IN LONGITUDINAL-TANK WALL(+ELI)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : IMPULSIVE
+** DIRECTION : LONGITUDINAL (+VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R77 LOADTYPE None  TITLE EQ LOADS IN LONGITUDINAL-TANK WALL(-ELI)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : IMPULSIVE
+** DIRECTION : LONGITUDINAL (-VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R84 LOADTYPE None  TITLE EQ LOADS IN TRANSVERSE-TANK WALL(+ETC)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : CONVECTIVE
+** DIRECTION : TRANSVERSE (+VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R85 LOADTYPE None  TITLE EQ LOADS IN TRANSVERSE-TANK WALL(-ETC)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : CONVECTIVE
+** DIRECTION : TRANSVERSE (-VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R86 LOADTYPE None  TITLE EQ LOADS IN LONGITUDINAL-TANK WALL(+ELC)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : CONVECTIVE
+** DIRECTION : LONGITUDINAL (+VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+LOAD R87 LOADTYPE None  TITLE EQ LOADS IN LONGITUDINAL-TANK WALL(-ELC)
+***********************************************
+** PRESSURES IN CYLINDRICAL PORTION
+** TYPE : CONVECTIVE
+** DIRECTION : LONGITUDINAL (-VE)
+** SEISMIC COEFFICIENT : NOT APPLIED
+***********************************************
+END DEFINE REFERENCE LOADS
+DEFINE WIND LOAD
+TYPE 1 WIND 1
+INT 0.845 0.915 0.969 1.013 1.05 1.082 1.111 1.138 HEIG  10  15  20  25  30  35 -
+ 40  45
+***********************************************
+LOAD 61 LOADTYPE Seismic  TITLE EARTHQUAKE LOADS IN TRANSVERSE (+ET)
+***********************************************
+* APPLY A REDUCTION FACTOR IF REQUIRED TO MATCH THE TOTAL MASS APPLIED
+* WITH THE TOTAL MASS CALCULATED
+REFERENCE LOAD
+R61 0.111 
+REFERENCE LOAD
+R64 0.0356 
+REFERENCE LOAD
+R74 0.1121 
+REFERENCE LOAD
+R84 0.02372 
+***********************************************
+LOAD 62 LOADTYPE Seismic  TITLE EARTHQUAKE LOADS IN TRANSVERSE (-ET)
+**********************************************
+* APPLY A REDUCTION FACTOR IF REQUIRED TO MATCH THE TOTAL MASS APPLIED
+* WITH THE TOTAL MASS CALCULATED
+REFERENCE LOAD
+R61 -0.111 
+REFERENCE LOAD
+R64 -0.0356 
+REFERENCE LOAD
+R74 -0.1121 
+REFERENCE LOAD
+R84 -0.02372 
+***********************************************
+LOAD 63 LOADTYPE Seismic  TITLE EARTHQUAKE LOADS IN LONGITUDINAL (+EL)
+**********************************************
+* APPLY A REDUCTION FACTOR IF REQUIRED TO MATCH THE TOTAL MASS APPLIED
+* WITH THE TOTAL MASS CALCULATED
+REFERENCE LOAD
+R62 0.111 
+REFERENCE LOAD
+R66 0.0356 
+REFERENCE LOAD
+R76 0.1121 
+REFERENCE LOAD
+R86 0.02372 
+***********************************************
+LOAD 64 LOADTYPE Seismic  TITLE EARTHQUAKE LOADS IN LONGITUDINAL (-EL)
+*********************************************
+REFERENCE LOAD
+R62 -0.111 
+REFERENCE LOAD
+R66 -0.0356 
+REFERENCE LOAD
+R76 -0.1121 
+REFERENCE LOAD
+R86 -0.02372 
+***********************************************
+LOAD 65 LOADTYPE Seismic  TITLE EARTHQUAKE LOADS IN VERTICAL (EV)
+************************************************
+*REFERENCE LOAD
+*R63 1.0
+*REFERENCE LOAD
+*R34 1.0
+**REFERENCE LOAD
+**R68 0.21
+************************************************
+LOAD 1 LOADTYPE Dead  TITLE STRUCTURAL STEEL GRAVITY LOAD (D1)
+***********************************************
+*SELFWEIGHT Y -1.12
+SELFWEIGHT Y -3 
+***********************************************
+LOAD 2 LOADTYPE Dead  TITLE STRUCTURAL STEEL MISC. FRAMING LOADS
+***********************************************
+* DEAD LOAD OF GRATING ON STRUCTURE = 35KG/SQ.M
+* SELF-WEIGHT OF HAND RAIL (ASSUMED AT 22KG/M)
+***********************************************
+MEMBER LOAD
+*/--- ON END BEAMS OF 0.889M PANELS ---/*
+7 UNI GY -0.155575
+*/--- ON END BEAMS OF 0.737M PANELS ---/*
+17 UNI GY -0.128975
+*/--- ON INTERMEDIATE BEAMS B/W 0.889M AND 0.864M PANELS ---/*
+11 UNI GY -0.306775
+*/--- ON INTERMEDIATE BEAMS B/W 0.864M AND 0.737M PANELS ---/*
+14 UNI GY -0.280175
+LOAD 3 LOADTYPE Dead  TITLE DEAD LOAD - FEED PIPE (D3)
+***********************************************
+***********************************************
+LOAD 4 LOADTYPE Dead  TITLE PIPING DEAD LOAD - FUTURE (D3)
+***********************************************
+***********************************************
+LOAD 5 LOADTYPE Dead  TITLE EQUIPMENT DEAD LOAD (D4)
+***********************************************
+*/ CAPACITY OF EACH BARREL  = 55 GALLONS
+*/ APPROXIMATE LOAD FROM EACH BARREL = 210KGS
+*/ NO. OF BARRELS SUPPORTED IN EACH PANEL OF 0.889M X 1.219M = 1
+*/ TOTAL LOAD ON THE PANEL = 210KGS
+*/ UDP FROM THE ABOVE LOAD = 1.938KN/M2
+*/--- LOAD ON THE EACH BEAM SUPPORTING THIS PANEL = 1.938X0.889/2 ---/*
+MEMBER LOAD
+6 25 UNI GY -0.862
+*/--- LOAD ON THE INTERMEDIATE BEAM SUPPORTING THIS PANEL = 4.063X0.848 ---/*
+***********************************************
+LOAD 6 LOADTYPE Dead  TITLE OTHER DEAD LOADS (D5)
+***********************************************
+***********************************************
+LOAD 10 LOADTYPE Dead  TITLE FOUNDATION SELF WEIGHT AND SOIL WEIGHT (D11)
+***********************************************
+***********************************************
+LOAD 12 LOADTYPE Live  TITLE LIVE LOAD - WALKWAY (LW)
+***********************************************
+* LIVE LOAD ON STRUCTURE = 60PSF = 2.87KN/M2
+***********************************************
+MEMBER LOAD
+*/--- ON END BEAMS OF 0.889M PANELS ---/*
+7 UNI GY -1.27571
+*/--- ON END BEAMS OF 0.737M PANELS ---/*
+17 UNI GY -1.0576
+*/--- ON INTERMEDIATE BEAMS B/W 0.889M AND 0.864M PANELS ---/*
+11 UNI GY -2.51555
+*/--- ON INTERMEDIATE BEAMS B/W 0.864M AND 0.737M PANELS ---/*
+14 UNI GY -2.29744
+LOAD 13 LOADTYPE Live  TITLE LIVE LOAD - TORQUE - NORMAL OPERATING (LT1)
+***********************************************
+***********************************************
+LOAD 14 LOADTYPE Live  TITLE LIVE LOAD - LIFTING - NORMAL OPERATING (LL1)
+***********************************************
+***********************************************
+LOAD 15 LOADTYPE Live  TITLE LIVE LOAD - TORQUE - MAXIMUM (LT2)
+***********************************************
+***********************************************
+LOAD 16 LOADTYPE Live  TITLE LIVE LOAD - LIFTING - CYLINDER CAPACITY (LL2)
+***********************************************
+***********************************************
+LOAD 21 LOADTYPE Snow  TITLE SNOW LOAD (S)
+***********************************************
+***********************************************
+LOAD 31 LOADTYPE Fluids  TITLE FLUID LOAD - NORMAL OPERATING - FEED PIPE (FFP)
+***********************************************
+***********************************************
+LOAD 32 LOADTYPE Fluids  TITLE FLUID LOAD - NORMAL OPERATING - DROP BOX (FDB)
+***********************************************
+***********************************************
+LOAD 33 LOADTYPE Fluids  TITLE FLUID LOAD - NORMAL OPERATING - FEED WELL (FFW)
+***********************************************
+***********************************************
+LOAD 34 LOADTYPE Fluids  TITLE FLUID LOAD - NORMAL OPERATING - TANK (F1)
+***********************************************
+* REFER AVERAGE SG CALCULATION UNDER NORMAL OPERATING CONDITION
+REFERENCE LOAD
+R34 1.146 
+***********************************************
+LOAD 35 LOADTYPE Fluids  TITLE FLUID LOAD - FULLY SANDED - TANK (F2)
+***********************************************
+* REFER AVERAGE SG CALCULATION UNDER EMBANKMENT CONDITION
+REFERENCE LOAD
+R34 1.381 
+***********************************************
+***********************************************
+LOAD 41 LOADTYPE Temperature  TITLE THERMAL LOAD +VE AMBIENT GRADIENT (T1)
+LOAD 42 LOADTYPE Temperature  TITLE THERMAL LOAD -VE AMBIENT GRADIENT (T2)
+LOAD 51 LOADTYPE Wind  TITLE WIND LOADS ON STRUCTURE +VE TRANSVERSE (+WT)
+************************************************
+LOAD 52 LOADTYPE Wind  TITLE WIND LOADS ON STRUCTURE -VE TRANSVERSE (-WT)
+************************************************
+LOAD 54 LOADTYPE Wind  TITLE WIND LOADS ON STRUCTURE +VE LONG. (+WL)
+************************************************
+LOAD 55 LOADTYPE Wind  TITLE WIND LOADS ON STRUCTURE -VE LONG. (-WL)
+************************************************
+LOAD 71 LOADTYPE Dead  TITLE TOTAL UNFACTORED TONNAGE
+SELFWEIGHT Y -1 
+***********************************************
+***********************************************
+LOAD 72 LOADTYPE None  TITLE WALL SELF WEIGHT
+***********************************************
+LOAD 73 LOADTYPE None  TITLE FLOOR PLATE SELFWEIGHT
+***********************************************
+LOAD 74 LOADTYPE None  TITLE CENTRE COLUMN SELFWEIGHT
+***********************************************
+LOAD 75 LOADTYPE None  TITLE BRIDGE DEAD LOAD
+***********************************************
+LOAD 76 LOADTYPE None  TITLE SUPPORTING STRUCTURE
+***********************************************
+LOAD 77 LOADTYPE None  TITLE UNDERFLOW CONE
+***********************************************
+LOAD 78 LOADTYPE None  TITLE LAUNDER
+***********************************************
+***********************************************
+LOAD 79 LOADTYPE Dead  TITLE TOTAL DEAD LOAD
+***********************************************
+REPEAT LOAD
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 
+***********************************************
+LOAD 80 LOADTYPE Fluids  TITLE TOTAL SLURRY LOADS
+***********************************************
+REPEAT LOAD
+31 1.0 32 1.0 33 1.0 
+LOAD 601 DEAD LOAD
+REPEAT LOAD
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 
+LOAD 602 LIVE LOAD - BRIDGE WALKWAY
+REPEAT LOAD
+12 1.0 
+LOAD 603 FLUID LOADS - OPERATING CONDITION
+REPEAT LOAD
+31 1.0 32 1.0 33 1.0 34 1.0 
+LOAD 604 FLUID LOADS - SANDED CONDITION
+REPEAT LOAD
+31 1.0 32 1.0 33 1.0 35 1.0 
+LOAD 605 LIVE LOAD - TORQUE AND LIFTING - NORMAL OPERATING
+REPEAT LOAD
+13 1.0 14 1.0 
+LOAD 606 LIVE LOAD - TORQUE AND LIFTING - MAXIMUM
+REPEAT LOAD
+15 1.0 16 1.0 
+LOAD 607 WIND LOAD - Z DIRECTION
+REPEAT LOAD
+51 1.0 
+LOAD 608 WIND LOAD - X DIRECTION
+REPEAT LOAD
+54 1.0 
+LOAD 609 SEISMIC LOAD - Z POSITIVE DIRECTION
+REPEAT LOAD
+61 1.0 
+LOAD 610 SEISMIC LOAD - Z NEGATIVE DIRECTION
+REPEAT LOAD
+62 1.0 
+LOAD 611 SEISMIC LOAD - X POSITIVE DIRECTION
+REPEAT LOAD
+63 1.0 
+LOAD 612 SEISMIC LOAD - X NEGATIVE DIRECTION
+REPEAT LOAD
+64 1.0 
+LOAD 613 SEISMIC LOAD - Y DIRECTION
+REPEAT LOAD
+65 1.0 
+LOAD 614 POSITIVE THERMAL GRADIENT
+REPEAT LOAD
+41 1.0 
+LOAD 615 NEGATIVE  THERMAL GRADIENT
+REPEAT LOAD
+42 1.0 
+********************************************************************************
+*            LOAD AND RESISTANCE FACTOR DESIGN LOAD COMBINATIONS               *
+********************************************************************************
+*
+* [00] 1.4(D + FFP + FDB + FFW) + 1.4F1
+* [01] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.6LW + 1.6LT1 + 1.6LL1 + 1.2T +  0.5S
+* [02] 1.2(D + FFP + FDB + FFW) + 0.9F2 + 1.6LW + 1.2(LT2 + LL2) + 1.2T + 0.5S
+* [03] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.0LW + 1.0LT1 + 1.0LL1 + 1.2T +  1.6S
+* [04] 1.2(D + FFP + FDB + FFW) + 0.9F2 + 1.0LW + 0.75(LT2 + LL2) + 1.2T + 1.6S
+* [05] 1.2(D + FFP + FDB +FFW)  + 1.2F1 + 1.2T + 1.6S + 0.8W
+* [06] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.0LW + 1.0LT1 + 1.0LL1 + 1.2T +  0.5S + 1.6W
+* [07] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.0LW + 1.0LT1 + 1.0LL1 + 1.2T +  0.2S + 1.0E
+* [08] 0.9(D + FFP + FDB + FFW) + 0.9F1 + 0.9T +  1.0E
+* [09] 0.9D + 0.9T +  1.6W
+*
+* E  = Eh +/- Ev
+* Eh = Combination of EL and ET
+* Ev = Vertical Seismic acceleration
+* NOTATION
+* Total dead load, D [LOADS 1 - 6]
+* Live load - Walkway, LW [LOAD 12]
+* Live load - Torque - Normal Operating, LT1 [LOAD 13]
+* Live load - Lifting - Normal Operating, LL1 [LOAD 14]
+* Live load - Torque - Maximum, LT2 [LOAD 15]
+* Live load - Lifting - Cylinder Capacity, LL2 [LOAD 16]
+* Snow and Ice loads, S1 [LOAD 21]->[S]
+*
+* Fluid Load - Normal Operating - Feed Pipe, FFP [LOAD 31], F
+* Fluid Load - Normal Operating - Drop Box, FDB [LOAD 32], F
+* Fluid Load - Normal Operating - Feed Well, FFW [LOAD 33], F
+* Fluid Load - Normal Operating - Tank, F1 [LOAD 34], F
+* Fluid Load - Fully Sanded - Tank, F2 [LOAD 35], F
+*
+* Thermal Loads, +'ve Ambient Gradient, T1 [LOAD 41]->[T]
+* Thermal Loads, -'ve Ambient Gradient, T2 [LOAD 42]->[T]
+*
+* Wind load on Structures in +ve transverse (+Z) direction, +WT [LOAD 51]->[W]
+* Wind load on structure in -ve transverse (-Z) direction, -WT [LOAD 52]->[W]
+* Wind load on structure in +ve longitudinal (+X) direction, +WL [LOAD 54]->[W]
+* Wind load on structure in -ve longitudinal (-X) direction, -WL [LOAD 55]->[W]
+*
+* Seismic Loads in +ve Transverse (+Z) Direction Operating, +ET [LOAD 61]->[E]
+* Seismic Loads in -ve Transverse (+Z) Direction Operating, -ET [LOAD 62]->[E]
+* Seismic Loads in +ve Long. (+X) Direction Operating, +EL [LOAD 63]->[E]
+* Seismic Loads in -ve Long. (-X) Direction Operating, -EL [LOAD 64]->[E]
+* Seismic Loads in Vertical (+Y) Direction Operating, EV [LOAD 65]->[E]
+*******************************************************************************
+* [00] 1.0(D + F + L ) - FOR SEISMIC MASS                                     *
+*******************************************************************************
+LOAD COMB 99 1.0(D + FFP + FDB + FFW + F1 + LW)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 1.0 
+*******************************************************************************
+* [00] 1.4(D + FFP + FDB + FFW + F1 )                                    *
+*******************************************************************************
+LOAD COMB 100 1.4(D + FFP + FDB + FFW + F1 )
+1 1.4 2 1.4 3 1.4 4 1.4 5 1.4 6 1.4 31 1.4 32 1.4 33 1.4 34 1.4 
+*******************************************************************************
+* [01] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.6LW + 1.6LT1 + 1.6LL1 + 1.2T + 0.5S
+*******************************************************************************
+LOAD COMB 101 1.2(D + FFP + FDB + FFW + F1)+1.6(LW + LT1 + LL1)+1.2T1 + 0.5S )
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.6 -
+13 1.6 14 1.6 41 1.2 21 0.5 
+LOAD COMB 102 1.2(D + FFP + FDB + FFW + F1)+1.6(LW + LT1 + LL1)+1.2T2 + 0.5S )
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.6 -
+13 1.6 14 1.6 42 1.2 21 0.5 
+*******************************************************************************
+* [02] 1.2(D + FFP + FDB + FFW) + 0.9F2 + 1.6LW + 0.9(LT2 + LL2) + 1.2T + 0.5S
+*******************************************************************************
+LOAD COMB 103 1.2(D + FFP + FDB + FFW)+0.9F2+1.6LW+1.2(LT2 + LL2)+1.2T1+0.5S)
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 35 0.9 12 1.6 -
+15 1.2 16 1.2 41 1.2 21 0.5 
+LOAD COMB 104 1.2(D + FFP + FDB + FFW)+0.9F2+1.6LW+1.2(LT2 + LL2)+1.2T2+0.5S)
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 35 0.9 12 1.6 -
+15 1.2 16 1.2 42 1.2 21 0.5 
+*******************************************************************************
+* [03] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.0LW + 1.0LT1 + 1.0LL1 + 1.2T +  1.6S
+*******************************************************************************
+LOAD COMB 105 1.2(D + FFP + FDB + FFW + F1)+1.0(LW + LT1 + LL1)+1.2T1 + 1.6S )
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 21 1.6 
+LOAD COMB 106 1.2(D + FFP + FDB + FFW + F1)+1.0(LW + LT1 + LL1)+1.2T2 + 1.6S )
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 21 1.6 
+*******************************************************************************
+* [04] 1.2(D + FFP + FDB + FFW) + 0.9F2 + 1.0LW + 0.75(LT2 + LL2) + 1.2T + 1.6S
+*******************************************************************************
+LOAD COMB 107 1.2(D + FFP + FDB + FFW)+0.9F2+1.0LW+0.75(LT2 + LL2)+1.2T1+1.6S)
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 35 0.9 12 1.0 -
+15 0.75 16 0.75 41 1.2 21 1.6 
+LOAD COMB 108 1.2(D + FFP + FDB + FFW)+0.9F2+1.0LW+0.75(LT2 + LL2)+1.2T2+1.6S)
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 35 0.9 12 1.0 -
+15 0.75 16 0.75 42 1.2 21 1.6 
+*******************************************************************************
+* [05] 1.2(D + FFP + FDB +FFW)  + 1.2F1 + 1.2T + 1.6S + 0.8W
+*******************************************************************************
+LOAD COMB 109 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T1 + 1.6S + 0.8WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 41 1.2 -
+21 1.6 51 0.8 
+LOAD COMB 110 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T2 + 1.6S + 0.8WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 42 1.2 -
+21 1.6 51 0.8 
+LOAD COMB 111 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T1 + 1.6S - 0.8WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 41 1.2 -
+21 1.6 52 0.8 
+LOAD COMB 112 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T2 + 1.6S - 0.8WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 42 1.2 -
+21 1.6 52 0.8 
+LOAD COMB 113 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T1 + 1.6S + 0.8WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 41 1.2 -
+21 1.6 54 0.8 
+LOAD COMB 114 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T2 + 1.6S + 0.8WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 42 1.2 -
+21 1.6 54 0.8 
+LOAD COMB 115 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T1 + 1.6S - 0.8WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 41 1.2 -
+21 1.6 55 0.8 
+LOAD COMB 116 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.2T2 + 1.6S - 0.8WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 42 1.2 -
+21 1.6 55 0.8 
+*******************************************************************************
+* [06] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.0LW + 1.0LT1+1.0LL1+1.2T+0.5S+1.6W
+*******************************************************************************
+LOAD COMB 117 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T1+0.5S+1.6WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 21 0.5 51 1.6 
+LOAD COMB 118 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T2+0.5S+1.6WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 21 0.5 51 1.6 
+LOAD COMB 119 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T1+0.5S-1.6WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 21 0.5 52 1.6 
+LOAD COMB 120 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T2+0.5S-1.6WT
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 21 0.5 52 1.6 
+LOAD COMB 121 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T1+0.5S+1.6WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 21 0.5 54 1.6 
+LOAD COMB 122 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T2+0.5S+1.6WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 21 0.5 54 1.6 
+LOAD COMB 123 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T1+0.5S-1.6WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 21 0.5 55 1.6 
+LOAD COMB 124 1.2(D + FFP + FDB + FFW + F1)+1.0(LW+ LT1 + LL1)+1.2T2+0.5S-1.6WL
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 21 0.5 55 1.6 
+*******************************************************************************
+* [07] 1.2(D + FFP + FDB + FFW) + 1.2F1 + 1.0LW + 1.0LT1 +1.0LL1+1.2T+0.2S+1.0E
+*******************************************************************************
+LOAD COMB 125 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0ET+0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 61 1.0 63 0.3 65 0.3 21 0.2 
+LOAD COMB 126 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0ET-0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 61 1.0 64 0.3 65 0.3 21 0.2 
+LOAD COMB 127 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0ET+0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 61 1.0 63 0.3 65 -0.3 21 0.2 
+LOAD COMB 128 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0ET-0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 61 1.0 64 0.3 65 -0.3 21 0.2 
+LOAD COMB 129 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0ET+0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 62 1.0 63 0.3 65 0.3 21 0.2 
+LOAD COMB 130 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0ET-0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 62 1.0 64 0.3 65 0.3 21 0.2 
+LOAD COMB 131 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0ET+0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 62 1.0 63 0.3 65 -0.3 21 0.2 
+LOAD COMB 132 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0ET-0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 62 1.0 64 0.3 65 -0.3 21 0.2 
+LOAD COMB 133 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0ET+0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 61 1.0 63 0.3 65 0.3 21 0.2 
+LOAD COMB 134 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0ET-0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 61 1.0 64 0.3 65 0.3 21 0.2 
+LOAD COMB 135 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0ET+0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 61 1.0 63 0.3 65 -0.3 21 0.2 
+LOAD COMB 136 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0ET-0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 61 1.0 64 0.3 65 -0.3 21 0.2 
+LOAD COMB 137 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0ET+0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 62 1.0 63 0.3 65 0.3 21 0.2 
+LOAD COMB 138 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0ET-0.3EL+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 62 1.0 64 0.3 65 0.3 21 0.2 
+LOAD COMB 139 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0ET+0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 62 1.0 63 0.3 65 -0.3 21 0.2 
+LOAD COMB 140 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0ET-0.3EL-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 62 1.0 64 0.3 65 -0.3 21 0.2 
+LOAD COMB 141 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EL+0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 63 1.0 61 0.3 65 0.3 21 0.2 
+LOAD COMB 142 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EL-0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 63 1.0 62 0.3 65 0.3 21 0.2 
+LOAD COMB 143 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EL+0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 63 1.0 61 0.3 65 -0.3 21 0.2 
+LOAD COMB 144 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EL-0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 63 1.0 62 0.3 65 -0.3 21 0.2 
+LOAD COMB 145 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EL+0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 64 1.0 61 0.3 65 0.3 21 0.2 
+LOAD COMB 146 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EL-0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 64 1.0 62 0.3 65 0.3 21 0.2 
+LOAD COMB 147 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EL+0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 64 1.0 61 0.3 65 -0.3 21 0.2 
+LOAD COMB 148 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EL-0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 64 1.0 62 0.3 65 -0.3 21 0.2 
+LOAD COMB 149 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EL+0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 63 1.0 61 0.3 65 0.3 21 0.2 
+LOAD COMB 150 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EL-0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 63 1.0 62 0.3 65 0.3 21 0.2 
+LOAD COMB 151 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EL+0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 63 1.0 61 0.3 65 -0.3 21 0.2 
+LOAD COMB 152 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EL-0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 63 1.0 62 0.3 65 -0.3 21 0.2 
+LOAD COMB 153 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EL+0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 64 1.0 61 0.3 65 0.3 21 0.2 
+LOAD COMB 154 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EL-0.3ET+0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 64 1.0 62 0.3 65 0.3 21 0.2 
+LOAD COMB 155 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EL+0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 64 1.0 61 0.3 65 -0.3 21 0.2 
+LOAD COMB 156 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EL-0.3ET-0.3EV+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 64 1.0 62 0.3 65 -0.3 21 0.2 
+LOAD COMB 157 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EV+0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 1.0 63 0.3 61 0.3 21 0.2 
+LOAD COMB 158 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EV-0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 1.0 64 0.3 61 0.3 21 0.2 
+LOAD COMB 159 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EV+0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 1.0 63 0.3 62 0.3 21 0.2 
+LOAD COMB 160 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1+1.0EV-0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 1.0 64 0.3 62 0.3 21 0.2 
+LOAD COMB 161 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EV+0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 -1.0 63 0.3 62 0.3 21 0.2 
+LOAD COMB 162 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EV-0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 -1.0 64 0.3 62 0.3 21 0.2 
+LOAD COMB 163 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EV+0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 -1.0 63 0.3 62 0.3 21 0.2 
+LOAD COMB 164 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T1-1.0EV-0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 41 1.2 65 -1.0 64 0.3 62 0.3 21 0.2 
+LOAD COMB 165 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EV+0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 1.0 63 0.3 62 0.3 21 0.2 
+LOAD COMB 166 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EV-0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 1.0 64 0.3 62 0.3 21 0.2 
+LOAD COMB 167 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EV+0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 1.0 63 0.3 62 0.3 21 0.2 
+LOAD COMB 168 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2+1.0EV-0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 1.0 64 0.3 62 0.3 21 0.2 
+LOAD COMB 169 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EV+0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 -1.0 63 0.3 62 0.3 21 0.2 
+LOAD COMB 170 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EV-0.3EL+0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 -1.0 64 0.3 62 0.3 21 0.2 
+LOAD COMB 171 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EV+0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 -1.0 63 0.3 62 0.3 21 0.2 
+LOAD COMB 172 1.2(D+FFP+FDB+FFW+F1)+1(LW+LT1+LL1)+1.2T2-1.0EV-0.3EL-0.3ET+0.2S
+1 1.2 2 1.2 3 1.2 4 1.2 5 1.2 6 1.2 31 1.2 32 1.2 33 1.2 34 1.2 12 1.0 -
+13 1.0 14 1.0 42 1.2 65 -1.0 64 0.3 62 0.3 21 0.2 
+*******************************************************************************
+*[08] 0.9(D + FFP + FDB + FFW) + 0.9F1 + 0.9T +  1.0E
+*******************************************************************************
+LOAD COMB 173 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0ET + 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+61 1.0 63 0.3 65 0.3 
+LOAD COMB 174 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0ET - 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+61 1.0 64 0.3 65 0.3 
+LOAD COMB 175 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0ET + 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+61 1.0 63 0.3 65 -0.3 
+LOAD COMB 176 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0ET - 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+61 1.0 64 0.3 65 -0.3 
+LOAD COMB 177 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0ET + 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+62 1.0 63 0.3 65 0.3 
+LOAD COMB 178 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0ET - 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+62 1.0 64 0.3 65 0.3 
+LOAD COMB 179 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0ET + 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+62 1.0 63 0.3 65 -0.3 
+LOAD COMB 180 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0ET - 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+62 1.0 64 0.3 65 -0.3 
+LOAD COMB 181 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0ET + 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+61 1.0 63 0.3 65 0.3 
+LOAD COMB 182 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0ET - 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+61 1.0 64 0.3 65 0.3 
+LOAD COMB 183 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0ET + 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+61 1.0 63 0.3 65 -0.3 
+LOAD COMB 184 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0ET - 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+61 1.0 64 0.3 65 -0.3 
+LOAD COMB 185 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0ET + 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+62 1.0 63 0.3 65 0.3 
+LOAD COMB 186 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0ET - 0.3EL + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+62 1.0 64 0.3 65 0.3 
+LOAD COMB 187 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0ET + 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+62 1.0 63 0.3 65 -0.3 
+LOAD COMB 188 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0ET - 0.3EL - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+62 1.0 64 0.3 65 -0.3 
+LOAD COMB 189 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EL + 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+63 1.0 61 0.3 65 0.3 
+LOAD COMB 190 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EL - 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+63 1.0 62 0.3 65 0.3 
+LOAD COMB 191 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EL + 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+63 1.0 61 0.3 65 -0.3 
+LOAD COMB 192 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EL - 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+63 1.0 62 0.3 65 -0.3 
+LOAD COMB 193 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EL + 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+64 1.0 61 0.3 65 0.3 
+LOAD COMB 194 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EL - 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+64 1.0 62 0.3 65 0.3 
+LOAD COMB 195 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EL + 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+64 1.0 61 0.3 65 -0.3 
+LOAD COMB 196 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EL - 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+64 1.0 62 0.3 65 -0.3 
+LOAD COMB 197 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EL + 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+63 1.0 61 0.3 65 0.3 
+LOAD COMB 198 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EL - 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+63 1.0 62 0.3 65 0.3 
+LOAD COMB 199 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EL + 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+63 1.0 61 0.3 65 -0.3 
+LOAD COMB 200 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EL - 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+63 1.0 62 0.3 65 -0.3 
+LOAD COMB 201 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EL + 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+64 1.0 61 0.3 65 0.3 
+LOAD COMB 202 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EL - 0.3ET + 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+64 1.0 62 0.3 65 0.3 
+LOAD COMB 203 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EL + 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+64 1.0 61 0.3 65 -0.3 
+LOAD COMB 204 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EL - 0.3ET - 0.3EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+64 1.0 62 0.3 65 -0.3 
+LOAD COMB 205 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EV + 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 1.0 61 0.3 63 0.3 
+LOAD COMB 206 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EV - 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 1.0 62 0.3 63 0.3 
+LOAD COMB 207 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EV + 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 1.0 61 0.3 64 0.3 
+LOAD COMB 208 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 + 1.0EV - 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 1.0 62 0.3 64 0.3 
+LOAD COMB 209 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EV + 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 -1.0 61 0.3 63 0.3 
+LOAD COMB 210 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EV - 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 -1.0 62 0.3 63 0.3 
+LOAD COMB 211 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EV + 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 -1.0 61 0.3 64 0.3 
+LOAD COMB 212 0.9(D+FFP+FDB+FFW+F1) + 0.9T1 - 1.0EV - 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 0.9 -
+65 -1.0 62 0.3 64 0.3 
+LOAD COMB 213 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EV + 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 1.0 61 0.3 63 0.3 
+LOAD COMB 214 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EV - 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 1.0 62 0.3 63 0.3 
+LOAD COMB 215 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EV + 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 1.0 61 0.3 64 0.3 
+LOAD COMB 216 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 + 1.0EV - 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 1.0 62 0.3 64 0.3 
+LOAD COMB 217 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EV + 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 -1.0 61 0.3 63 0.3 
+LOAD COMB 218 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EV - 0.3ET + 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 -1.0 62 0.3 63 0.3 
+LOAD COMB 219 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EV + 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 -1.0 61 0.3 64 0.3 
+LOAD COMB 220 0.9(D+FFP+FDB+FFW+F1) + 0.9T2 - 1.0EV - 0.3ET - 0.3EL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 0.9 -
+65 -1.0 62 0.3 64 0.3 
+*******************************************************************************
+* [09] 0.9D + 0.9T +  1.6W
+*******************************************************************************
+LOAD COMB 221 0.9D + 0.9T1 +1.6WT
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 41 0.9 51 1.6 
+LOAD COMB 222 0.9D + 0.9T2 +1.6WT
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 42 0.9 51 1.6 
+LOAD COMB 223 0.9D + 0.9T1 -1.6WT
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 41 0.9 52 1.6 
+LOAD COMB 224 0.9D + 0.9T2 -1.6WT
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 42 0.9 52 1.6 
+LOAD COMB 225 0.9D + 0.9T1 +1.6WL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 41 0.9 54 1.6 
+LOAD COMB 226 0.9D + 0.9T2 +1.6WL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 42 0.9 54 1.6 
+LOAD COMB 227 0.9D + 0.9T1 -1.6WL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 41 0.9 55 1.6 
+LOAD COMB 228 0.9D + 0.9T2 -1.6WL
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 42 0.9 55 1.6 
+********************************************************************************
+*                     SERVICEABLILTY  LOAD COMBINATIONS                       *
+********************************************************************************
+* LOAD COMBINATIONS ARE FORMULATED PER SEC 2.3 MQ11-02-DC-0000-SC0001 REV 2
+*******************************************************************************
+* [00] (D + FFP + FDB + FFW + F1 )                                    *
+*******************************************************************************
+LOAD COMB 1000 (D + FFP + FDB + FFW + F1 )
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 
+*******************************************************************************
+* [01] (D + FFP + FDB + FFW + F1 + LW + LT1 + LL1 + 1.0T + S)                   *
+*******************************************************************************
+LOAD COMB 1001 (D + FFP + FDB + FFW + F1 + LW + LT1 + LL1 + T1 + S )
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 1.0 -
+13 1.0 14 1.0 41 1.0 21 1.0 
+LOAD COMB 1002 (D + FFP + FDB + FFW + F1 + LW + LT1 + LL1 + T2 + S)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 1.0 -
+13 1.0 14 1.0 42 1.0 21 1.0 
+*******************************************************************************
+* [02] (D + FFP + FDB + FFW) + 0.75F2 + LW + 0.75(LT2 + LL2) + 1.0T + S         *
+*******************************************************************************
+LOAD COMB 1003 (D + FFP + FDB + FFW) + 0.75F2 + LW + 0.75(LT2 + LL2) + T1 + S)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 35 0.75 12 1.0 -
+15 0.75 16 0.75 41 1.0 21 1.0 
+LOAD COMB 1004 (D + FFP + FDB + FFW) + 0.75F2 + LW + 0.75(LT2 + LL2) + T2 + S)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 35 0.75 12 1.0 -
+15 0.75 16 0.75 42 1.0 21 1.0 
+*******************************************************************************
+* [03] (D  + T + W)
+*******************************************************************************
+LOAD COMB 1005 (D + WT + T1)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 51 1.0 41 1.0 
+LOAD COMB 1006 (D + WT + T2)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 51 1.0 42 1.0 
+LOAD COMB 1007 (D - WT + T1)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 52 1.0 41 1.0 
+LOAD COMB 1008 (D - WT + T2)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 52 1.0 42 1.0 
+LOAD COMB 1009 (D + WL + T1)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 54 1.0 41 1.0 
+LOAD COMB 1010 (D + WL + T2)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 54 1.0 42 1.0 
+LOAD COMB 1011 (D - WL + T1)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 55 1.0 41 1.0 
+LOAD COMB 1012 (D - WL + T2)
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 55 1.0 42 1.0 
+*******************************************************************************
+* [04] (D + FFP + FDB + FFW) + F1 + 1.0T + 0.714E
+*******************************************************************************
+LOAD COMB 1013 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714ET + 0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+61 0.714 63 0.214 65 0.714 
+LOAD COMB 1014 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714ET - 0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+61 0.714 64 0.214 65 0.714 
+LOAD COMB 1015 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714ET + 0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+61 0.714 63 0.214 65 0.714 
+LOAD COMB 1016 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714ET -0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+61 0.714 64 0.214 65 0.714 
+LOAD COMB 1017 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714ET + 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+61 0.714 63 0.214 65 -0.714 
+LOAD COMB 1018 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714ET - 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+61 0.714 64 0.214 65 -0.714 
+LOAD COMB 1019 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714ET + 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+61 0.714 63 0.214 65 -0.714 
+LOAD COMB 1020 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714ET - 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+61 0.714 64 0.214 65 -0.714 
+LOAD COMB 1021 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714ET + 0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+62 0.714 63 0.214 65 0.714 
+LOAD COMB 1022 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714ET -0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+62 0.714 64 0.214 65 0.714 
+LOAD COMB 1023 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714ET + 0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+62 0.714 63 0.214 65 0.714 
+LOAD COMB 1024 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714ET - 0.214EL + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+62 0.714 64 0.214 65 0.714 
+LOAD COMB 1025 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714ET + 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+62 0.714 63 0.214 65 -0.714 
+LOAD COMB 1026 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714ET - 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+62 0.714 64 0.214 65 -0.714 
+LOAD COMB 1027 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714ET + 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+62 0.714 63 0.214 65 -0.714 
+LOAD COMB 1028 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714ET - 0.214EL - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+62 0.714 64 0.214 65 -0.714 
+LOAD COMB 1029 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714EL + 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+63 0.714 61 0.214 65 0.714 
+LOAD COMB 1030 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714EL - 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+63 0.714 62 0.214 65 0.714 
+LOAD COMB 1031 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714EL + 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+63 0.714 61 0.214 65 0.714 
+LOAD COMB 1032 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714EL - 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+63 0.714 62 0.214 65 0.714 
+LOAD COMB 1033 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714EL + 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+63 0.714 61 0.214 65 -0.714 
+LOAD COMB 1034 (D + FFP + FDB + FFW) + F1 + 1.0T1 + 0.714EL - 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+63 0.714 62 0.214 65 -0.714 
+LOAD COMB 1035 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714EL + 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+63 0.714 61 0.214 65 -0.714 
+LOAD COMB 1036 (D + FFP + FDB + FFW) + F1 + 1.0T2 + 0.714EL - 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+63 0.714 62 0.214 65 -0.714 
+LOAD COMB 1037 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714EL + 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+64 0.714 61 0.214 65 0.714 
+LOAD COMB 1038 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714EL - 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+64 0.714 62 0.214 65 0.714 
+LOAD COMB 1039 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714EL + 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+64 0.714 61 0.214 65 0.714 
+LOAD COMB 1040 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714EL - 0.214ET + 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+64 0.714 62 0.214 65 0.714 
+LOAD COMB 1041 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714EL + 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+64 0.714 61 0.214 65 -0.714 
+LOAD COMB 1042 (D + FFP + FDB + FFW) + F1 + 1.0T1 - 0.714EL - 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 41 1.0 -
+64 0.714 62 0.214 65 -0.714 
+LOAD COMB 1043 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714EL + 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+64 0.714 61 0.214 65 -0.714 
+LOAD COMB 1044 (D + FFP + FDB + FFW) + F1 + 1.0T2 - 0.714EL - 0.214ET - 0.714EV
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 42 1.0 -
+64 0.714 62 0.214 65 -0.714 
+*******************************************************************************
+* [05] 0.9(D + FFP + FDB + FFW)+ 0.9F1 + 1.0T +0.714E                            *
+*******************************************************************************
+LOAD COMB 1045 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714ET+0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+61 0.714 63 0.214 65 0.714 
+LOAD COMB 1046 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714ET-0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+61 0.714 64 0.214 65 0.714 
+LOAD COMB 1047 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714ET+0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+61 0.714 63 0.214 65 0.714 
+LOAD COMB 1048 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714ET-0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+61 0.714 64 0.214 65 0.714 
+LOAD COMB 1049 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714ET+0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+61 0.714 63 0.214 65 -0.714 
+LOAD COMB 1050 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714ET-0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+61 0.714 64 0.214 65 -0.714 
+LOAD COMB 1051 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714ET+0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+61 0.714 63 0.214 65 -0.714 
+LOAD COMB 1052 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714ET-0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+61 0.714 64 0.214 65 -0.714 
+LOAD COMB 1053 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714ET+0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+62 0.714 63 0.214 65 0.714 
+LOAD COMB 1054 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714ET-0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+62 0.714 64 0.214 65 0.714 
+LOAD COMB 1055 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714ET+0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+62 0.714 63 0.214 65 0.714 
+LOAD COMB 1056 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714ET-0.214EL+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+62 0.714 64 0.214 65 0.714 
+LOAD COMB 1057 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714ET+0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+62 0.714 63 0.214 65 -0.714 
+LOAD COMB 1058 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714ET-0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+62 0.714 64 0.214 65 -0.714 
+LOAD COMB 1059 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714ET+0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+62 0.714 63 0.214 65 -0.714 
+LOAD COMB 1060 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714ET-0.214EL-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+62 0.714 64 0.214 65 -0.714 
+LOAD COMB 1061 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714EL+0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+63 0.714 61 0.214 65 0.714 
+LOAD COMB 1062 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714EL-0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+63 0.714 62 0.214 65 0.714 
+LOAD COMB 1063 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714EL+0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+63 0.714 61 0.214 65 0.714 
+LOAD COMB 1064 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714EL-0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+63 0.714 62 0.214 65 0.714 
+LOAD COMB 1065 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714EL+0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+63 0.714 61 0.214 65 -0.714 
+LOAD COMB 1066 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1+0.714EL-0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+63 0.714 62 0.214 65 -0.714 
+LOAD COMB 1067 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714EL+0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+63 0.714 61 0.214 65 -0.714 
+LOAD COMB 1068 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2+0.714EL-0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+63 0.714 62 0.214 65 -0.714 
+LOAD COMB 1069 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714EL+0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+64 0.714 61 0.214 65 0.714 
+LOAD COMB 1070 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714EL-0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+64 0.714 62 0.214 65 0.714 
+LOAD COMB 1071 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714EL+0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+64 0.714 61 0.214 65 0.714 
+LOAD COMB 1072 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714EL-0.214ET+0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+64 0.714 62 0.214 65 0.714 
+LOAD COMB 1073 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714EL+0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+64 0.714 61 0.214 65 -0.714 
+LOAD COMB 1074 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T1-0.714EL-0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 41 1.0 -
+64 0.714 62 0.214 65 -0.714 
+LOAD COMB 1075 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714EL+0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+64 0.714 61 0.214 65 -0.714 
+LOAD COMB 1076 0.9(D + FFP + FDB + FFW) + 0.9F1 + 1.0T2-0.714EL-0.214ET-0.714EV
+1 0.9 2 0.9 3 0.9 4 0.9 5 0.9 6 0.9 31 0.9 32 0.9 33 0.9 34 0.9 42 1.0 -
+64 0.714 62 0.214 65 -0.714 
+*******************************************************************************
+* [06] (D + FFP + FDB + FFW) + F1 + 0.75LW + 0.75LT1 + 0.75LL1 + 1.0T + 0.75W + 0.75S
+*******************************************************************************
+LOAD COMB 1077 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T1+0.75WT+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 51 0.75 21 0.75 
+LOAD COMB 1078 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T2+0.75WT+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 51 0.75 21 0.75 
+LOAD COMB 1079 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T1-0.75WT+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 52 0.75 21 0.75 
+LOAD COMB 1080 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T2-0.75WT+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 52 0.75 21 0.75 
+LOAD COMB 1081 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T1+0.75WL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 54 0.75 21 0.75 
+LOAD COMB 1082 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T2+0.75WL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 54 0.75 21 0.75 
+LOAD COMB 1083 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T1-0.75WL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 55 0.75 21 0.75 
+LOAD COMB 1084 (D+FFP+FDB+FFW)+F1+0.75LW+0.75(LT1+0.75LL2)+1.0T2-0.75W+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 55 0.75 21 0.75 
+*******************************************************************************
+* [07] (D + FFP + FDB + FFW) + F1 + 0.75LW + 0.75LT1 + 0.75LL1 + 1.0T + 0.536E + 0.75S              *
+*******************************************************************************
+LOAD COMB 1085 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET+EV)+0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 61 0.536 63 0.16 65 0.536 21 0.75 
+LOAD COMB 1086 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET+EV)-0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 61 0.536 64 0.16 65 0.536 21 0.75 
+LOAD COMB 1087 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET+EV)+0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 61 0.536 63 0.16 65 0.536 21 0.75 
+LOAD COMB 1088 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET+EV)-0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 61 0.536 64 0.16 65 0.536 21 0.75 
+LOAD COMB 1089 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET-EV)+0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 61 0.536 63 0.16 65 -0.536 21 0.75 
+LOAD COMB 1090 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET-EV)-0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 61 0.536 64 0.16 65 -0.536 21 0.75 
+LOAD COMB 1091 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET-EV)+0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 61 0.536 63 0.16 65 -0.536 21 0.75 
+LOAD COMB 1092 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET-EV)-0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 61 0.536 64 0.16 65 -0.536 21 0.75 
+LOAD COMB 1093 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(-ET+EV)+.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 62 0.536 63 0.16 65 0.536 21 0.75 
+LOAD COMB 1094 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(-ET+EV)-.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 62 0.536 64 0.16 65 0.536 21 0.75 
+LOAD COMB 1095 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(-ET+EV)+.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 62 0.536 63 0.16 65 0.536 21 0.75 
+LOAD COMB 1096 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(-ET+EV)-.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 62 0.536 64 0.16 65 0.536 21 0.75 
+LOAD COMB 1097 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1-.536(ET+EV)+0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 62 0.536 63 0.16 65 -0.536 21 0.75 
+LOAD COMB 1098 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1-.536(ET+EV)-0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 62 0.536 64 0.16 65 -0.536 21 0.75 
+LOAD COMB 1099 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2-.536(ET+EV)+0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 62 0.536 63 0.16 65 -0.536 21 0.75 
+LOAD COMB 1100 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2-.536(ET+EV)-0.16EL+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 62 0.536 64 0.16 65 -0.536 21 0.75 
+LOAD COMB 1101 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET+EV)+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 63 0.536 61 0.16 65 0.536 21 0.75 
+LOAD COMB 1102 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET+EV)-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 63 0.536 62 0.16 65 0.536 21 0.75 
+LOAD COMB 1103 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET+EV)+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 63 0.536 61 0.16 65 0.536 21 0.75 
+LOAD COMB 1104 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET+EV)-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 63 0.536 62 0.16 65 0.536 21 0.75 
+LOAD COMB 1105 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET-EV)+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 63 0.536 61 0.16 65 -0.536 21 0.75 
+LOAD COMB 1106 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1+.536(ET-EV)-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 63 0.536 62 0.16 65 -0.536 21 0.75 
+LOAD COMB 1107 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET-EV)+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 63 0.536 61 0.16 65 -0.536 21 0.75 
+LOAD COMB 1108 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2+.536(ET-EV)-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 63 0.536 62 0.16 65 -0.536 21 0.75 
+LOAD COMB 1109 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1-.536(ET-EV)+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 64 0.536 61 0.16 65 0.536 21 0.75 
+LOAD COMB 1110 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1-.536(ET-EV-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 64 0.536 62 0.16 65 0.536 21 0.75 
+LOAD COMB 1111 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2-.536(ET-EV+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 64 0.536 61 0.16 65 0.536 21 0.75 
+LOAD COMB 1112 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2-.536(ET-EV-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 64 0.536 62 0.16 65 0.536 21 0.75 
+LOAD COMB 1113 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1-.536(ET-EV+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 64 0.536 61 0.16 65 -0.536 21 0.75 
+LOAD COMB 1114 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T1-.536(ET+EV-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 41 1.0 64 0.536 62 0.16 65 -0.536 21 0.75 
+LOAD COMB 1115 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2-.536(ET+EV+0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 64 0.536 61 0.16 65 -0.536 21 0.75 
+LOAD COMB 1116 (D+FFP+FDB+FFW+F1)+0.75(LW+LT1+LL1)+1T2-.536(ET+EV-0.16ET+0.75S
+1 1.0 2 1.0 3 1.0 4 1.0 5 1.0 6 1.0 31 1.0 32 1.0 33 1.0 34 1.0 12 0.75 -
+13 0.75 14 0.75 42 1.0 64 0.536 62 0.16 65 -0.536 21 0.75 
+*..../...1.../....2..../...3.../....4..../....5..../....6..../....7..../....8..*
+PERFORM ANALYSIS PRINT STATICS CHECK
+DEFINE ENVELOPE
+** STRENGTH LOAD COMBINATION ENVELOPE FOR LRFD DESIGN
+100 TO 196 ENVELOPE 1 TYPE STRENGTH
+** SERVICEABILITY LOAD COMBINATION ENVELOPE
+1000 TO 1116 ENVELOPE 2 TYPE SERVICEABILITY
+601 TO 615 ENVELOPE 3 TYPE STRENGTH
+END DEFINE ENVELOPE
+LOAD LIST ENV 1
+PARAMETER 1
+CODE AISC UNIFIED 2010
+BEAM 1 ALL
+*------------ A36/E250 ----------------*
+FU 400000 ALL
+FYLD 250000 ALL
+*---------------------------------*
+LZ 1.753 MEMB 6 25
+MAIN 200 MEMB 6 7 10 11 14 17 25 36 37
+METHOD LRFD
+RATIO 0.9 MEMB 6 7 10 11 14 17 25 36 37
+TMAIN 300 MEMB 6 7 10 11 14 17 25 36 37
+TRACK 2 MEMB 6 7 10 11 14 17 25 36 37
+CHECK CODE MEMB 6 7 10 11 14 17 25 36 37
+STEEL TAKE OFF LIST 6 7 10 11 14 17 25 36 37
+FINISH
