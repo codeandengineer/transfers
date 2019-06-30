@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MaterialTable>
+    <Material>
+        <Classification>S275M</Classification>
+        <Fu>370</Fu>
+        <Fy>275</Fy>
+    </Material>
+    <Material>
+        <Classification>S275ML</Classification>
+        <Fu>370</Fu>
+        <Fy>275</Fy>
+    </Material>
+    <Material>
+        <Classification>S355M</Classification>
+        <Fu>470</Fu>
+        <Fy>355</Fy>
+    </Material>
+    <Material>
+        <Classification>S355ML</Classification>
+        <Fu>470</Fu>
+        <Fy>355</Fy>
+    </Material>
+    <Material>
+        <Classification>S420M</Classification>
+        <Fu>520</Fu>
+        <Fy>420</Fy>
+    </Material>
+    <Material>
+        <Classification>S420ML</Classification>
+        <Fu>520</Fu>
+        <Fy>420</Fy>
+    </Material>
+    <Material>
+        <Classification>S460M</Classification>
+        <Fu>540</Fu>
+        <Fy>460</Fy>
+    </Material>
+    <Material>
+        <Classification>S460ML</Classification>
+        <Fu>540</Fu>
+        <Fy>460</Fy>
+    </Material>
+</MaterialTable>

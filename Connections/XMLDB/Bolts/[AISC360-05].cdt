@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<BoltGradesTable>
+    <BoltGrade>
+        <Classification>A307</Classification>
+        <Fnt>310</Fnt>
+        <Fnv>165</Fnv>
+    </BoltGrade>
+    <BoltGrade>
+        <Classification>A325T</Classification>
+        <Fnt>620</Fnt>
+        <Fnv>330</Fnv>
+    </BoltGrade>
+    <BoltGrade>
+        <Classification>A325S</Classification>
+        <Fnt>620</Fnt>
+        <Fnv>414</Fnv>
+    </BoltGrade>
+    <BoltGrade>
+        <Classification>A490T</Classification>
+        <Fnt>780</Fnt>
+        <Fnv>414</Fnv>
+    </BoltGrade>
+    <BoltGrade>
+        <Classification>A490S</Classification>
+        <Fnt>780</Fnt>
+        <Fnv>520</Fnv>
+    </BoltGrade>
+</BoltGradesTable>

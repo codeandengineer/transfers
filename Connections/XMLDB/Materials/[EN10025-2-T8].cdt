@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MaterialTable>
+    <Material>
+        <Classification>S185</Classification>
+        <Fu>310</Fu>
+        <Fy>185</Fy>
+    </Material>
+    <Material>
+        <Classification>E295</Classification>
+        <Fu>490</Fu>
+        <Fy>295</Fy>
+    </Material>
+    <Material>
+        <Classification>E335</Classification>
+        <Fu>590</Fu>
+        <Fy>335</Fy>
+    </Material>
+    <Material>
+        <Classification>E360</Classification>
+        <Fu>690</Fu>
+        <Fy>360</Fy>
+    </Material>
+</MaterialTable>

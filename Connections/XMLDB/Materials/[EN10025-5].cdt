@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MaterialTable>
+    <Material>
+        <Classification>S235J0W</Classification>
+        <Fu>360</Fu>
+        <Fy>235</Fy>
+    </Material>
+    <Material>
+        <Classification>S235J2W</Classification>
+        <Fu>360</Fu>
+        <Fy>235</Fy>
+    </Material>
+    <Material>
+        <Classification>S355J0WP</Classification>
+        <Fu>510</Fu>
+        <Fy>355</Fy>
+    </Material>
+    <Material>
+        <Classification>S355J2WP</Classification>
+        <Fu>510</Fu>
+        <Fy>355</Fy>
+    </Material>
+    <Material>
+        <Classification>S355J0WP</Classification>
+        <Fu>510</Fu>
+        <Fy>355</Fy>
+    </Material>
+    <Material>
+        <Classification>S355J2W</Classification>
+        <Fu>510</Fu>
+        <Fy>355</Fy>
+    </Material>
+    <Material>
+        <Classification>S355K2W</Classification>
+        <Fu>510</Fu>
+        <Fy>355</Fy>
+    </Material>
+</MaterialTable>

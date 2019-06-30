@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-16">
+<title>Design Calculation of Splice Connection</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<h1>Design of Splice Connection</h1>
+   
+	
+	
+	
+		<h3>1.0 Design of the Web Connection (Bolts):</h3><!--Bolt Tensile Strength Calculations-->
+<h4>1.1 Tensile Strength:</h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal Tensile Strength of each bolt:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">F<sub>nt</sub>A<sub>b</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">551.3kN</td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Axial Tension</td>
+<td class="asd">2.00</td>
+<td class="lrfd">0.75</td>
+</tr>
+<tr>
+<td class="desc">Design Axial Tensile Strength</td>
+<td class="asd">257.67kN</td>
+<td class="lrfd">413.51kN</td>
+</tr>
+</table>
+		<!--Bolt Shear Strength Calculations--><h4>1.2 Shear Strength:</h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal Shear Strength of each bolt [Single/Double Shear]:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">F<sub>nv</sub>A<sub>b</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">646.1kN</td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Shear</td>
+<td class="asd">2.00</td>
+<td class="lrfd">0.75</td>
+</tr>
+<tr>
+<td class="desc">Design Shear Strength</td>
+<td class="asd">323.03kN</td>
+<td class="lrfd">484.55kN</td>
+</tr>
+</table>
+		<!--Combined Tension and Shear Calculations--><h4>1.3 Combined Tension and Shear:</h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal Strength of each bolt in combined tension and shear:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">F'<sub>nt</sub>A<sub>b</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">551.3kN</td>
+</tr>
+</table><br><!--Where Section--><table class="where">
+<tr>
+<td colspan="3">Where,</td>
+</tr>
+<tr>
+<td class="where-left">F'<sub>nt</sub></td>
+<td class="where-equal">=</td>
+<td class="where-right">Min(1.3F<sub>nt</sub>-(F<sub>nt</sub>/;F<sub>nv</sub>)f<sub>rv</sub>,F<sub>nt</sub>) for LRFD</td>
+</tr>
+<tr>
+<td class="where-left"></td>
+<td class="where-equal">=</td>
+<td class="where-right">Min(1.3F<sub>nt</sub>-(F<sub>nt</sub>/F<sub>nv</sub>)f<sub>rv</sub>,F<sub>nt</sub>) for ASD</td>
+</tr>
+<tr>
+<td class="where-left"></td>
+<td class="where-equal">=</td>
+<td class="where-right">780.0N/mm<sup>2</sup></td>
+</tr>
+<tr>
+<td class="where-left">f<sub>rv</sub></td>
+<td class="where-equal">=</td>
+<td class="where-right">0.0N/mm<sup>2</sup></td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Combined Forces</td>
+<td class="asd">2.00</td>
+<td class="lrfd">0.75</td>
+</tr>
+<tr>
+<td class="desc">Design Strength under Combined Tension and Shear</td>
+<td class="asd">257.67kN</td>
+<td class="lrfd">413.51kN</td>
+</tr>
+</table><br>
+		<!--Bearing Strength Calculations--><h4>1.4a Bearing Strength at Bolt Holes <span class="h4-small">[For one line of bolts in force direction][For Plates]</span></h4>
+<p>a) When deformation at the bolt hole at service load is a design consideration</p>
+<table class="calc">
+<tr>
+<td class="f-left"></td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">1.2L<sub>c</sub>tF<sub>ug</sub></td>
+<td class="f-equal"></td>
+<td class="f-right">2.4dtF<sub>ug</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">[NA]kN</td>
+<td class="f-equal"></td>
+<td class="f-right"></td>
+</tr>
+</table>
+<p>b) When deformation at the bolt hole at service load is NOT a design consideration</p>
+<table class="calc">
+<tr>
+<td class="f-left"></td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">1.5L<sub>c</sub>tF<sub>ug</sub></td>
+<td class="f-equal"></td>
+<td class="f-right">3.0dtF<sub>ug</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">12150.0kN</td>
+<td class="f-equal"></td>
+<td class="f-right"></td>
+</tr>
+</table><br><h4>1.4b Bearing Strength at Bolt Holes <span class="h4-small">[For one line of bolts in force direction][For Main Member Web]</span></h4>
+<p>a) When deformation at the bolt hole at service load is a design consideration</p>
+<table class="calc">
+<tr>
+<td class="f-left"></td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">1.2L<sub>c</sub>tF<sub>ug</sub></td>
+<td class="f-equal"></td>
+<td class="f-right">2.4dtF<sub>ug</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">[NA]kN</td>
+<td class="f-equal"></td>
+<td class="f-right"></td>
+</tr>
+</table>
+<p>b) When deformation at the bolt hole at service load is NOT a design consideration</p>
+<table class="calc">
+<tr>
+<td class="f-left"></td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">1.5L<sub>c</sub>tF<sub>ug</sub></td>
+<td class="f-equal"></td>
+<td class="f-right">3.0dtF<sub>ug</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">2187.0kN</td>
+<td class="f-equal"></td>
+<td class="f-right"></td>
+</tr>
+</table><br><!--Where Section--><table class="where">
+<tr>
+<td colspan="3">Where,</td>
+</tr>
+<tr>
+<td class="where-left">L<sub>c</sub></td>
+<td class="where-equal">=</td>
+<td class="where-right">413.5mm</td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Bearing</td>
+<td class="asd">2.00</td>
+<td class="lrfd">0.75</td>
+</tr>
+<tr>
+<td class="desc">Design Strength under Bearing</td>
+<td class="asd">1093.50kN</td>
+<td class="lrfd">1640.25kN</td>
+</tr>
+</table><br>
+	
+	
+		<!--Design Checks for Plates - Web Connection--><h3>2.0 Design of the Web Connection (Plates):</h3>
+<h4>2.1 Tensile Yielding:</h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal strength of the plate in tensile yielding[One/Both Sides]:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">F<sub>yp</sub>A<sub>g</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">7245.0kN</td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Tensile Yielding</td>
+<td class="asd">1.67</td>
+<td class="lrfd">0.90</td>
+</tr>
+<tr>
+<td class="desc">Design Strength under Tensile Yielding</td>
+<td class="asd">4338.32kN</td>
+<td class="lrfd">6520.50kN</td>
+</tr>
+</table><br>
+		<h4>2.2 Tensile Rupture:</h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal strength of the plate in tensile rupture[One/Both Sides]:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">F<sub>up</sub>A<sub>e</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">6480.0kN</td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Tensile Rupture</td>
+<td class="asd">2.00</td>
+<td class="lrfd">0.75</td>
+</tr>
+<tr>
+<td class="desc">Design Strength under Tensile Rupture</td>
+<td class="asd">3240.0kN</td>
+<td class="lrfd">4860.0kN</td>
+</tr>
+</table><br>
+		<h4>2.3 Shear Yielding:</h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal strength of the plate in shear yielding[One/Both Sides]:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">0.60F<sub>yp</sub>A<sub>gv</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">4347.0kN</td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Shear Yielding</td>
+<td class="asd">1.50</td>
+<td class="lrfd">1.00</td>
+</tr>
+<tr>
+<td class="desc">Design Strength under Shear Yielding</td>
+<td class="asd">2898.0kN</td>
+<td class="lrfd">4347.0kN</td>
+</tr>
+</table><br>
+		<h4>2.4 Shear Rupture:</h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal strength of the plate in shear rupture[One/Both Sides]:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">0.60F<sub>up</sub>A<sub>nv</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">3888.0kN</td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Shear Rupture</td>
+<td class="asd">2.00</td>
+<td class="lrfd">0.75</td>
+</tr>
+<tr>
+<td class="desc">Design Strength under Shear Rupture</td>
+<td class="asd">1944.0kN</td>
+<td class="lrfd">2916.0kN</td>
+</tr>
+</table><br>
+		
+			<h4>2.5a Block Shear Strength <span class="h4-small">[For Plates]:</span></h4>
+<table class="calc">
+<tr>
+<td class="f-left">Nominal strength of the plate in block shear [One/Both Sides]:</td>
+<td class="f-main">R<sub>n</sub></td>
+<td class="f-equal">=</td>
+<td class="f-right">0.60F<sub>up</sub>A<sub>nv</sub>+U<sub>bs</sub>F<sub>up</sub>A<sub>nt</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">0.60F<sub>yp</sub>A<sub>gv</sub>+U<sub>bs</sub>F<sub>up</sub>A<sub>nt</sub></td>
+</tr>
+<tr>
+<td class="f-left"></td>
+<td class="f-main"></td>
+<td class="f-equal">=</td>
+<td class="f-right">16362.0kN</td>
+</tr>
+</table>
+<table class="where">
+<tr>
+<td colspan="3">Where,</td>
+</tr>
+<tr>
+<td class="where-left">U<sub>bs</sub></td>
+<td class="where-equal">=</td>
+<td class="where-right">1.0</td>
+</tr>
+<tr>
+<td class="where-left">A<sub>nv</sub></td>
+<td class="where-equal">=</td>
+<td class="where-right">41350.0<sup>2</sup></td>
+</tr>
+<tr>
+<td class="where-left">A<sub>gv</sub></td>
+<td class="where-equal">=</td>
+<td class="where-right">59500.0<sup>2</sup></td>
+</tr>
+<tr>
+<td class="where-left">A<sub>nt</sub></td>
+<td class="where-equal">=</td>
+<td class="where-right">11550.0<sup>2</sup></td>
+</tr>
+</table><br><table class="summary">
+<tr>
+<td class="desc"></td>
+<td class="asd">Allowable Stress Design</td>
+<td class="lrfd">Load Resistance Factor Design</td>
+</tr>
+<tr>
+<td class="desc">Reduction Factor/Safety Factor for Block Shear</td>
+<td class="asd">2.00</td>
+<td class="lrfd">0.75</td>
+</tr>
+<tr>
+<td class="desc">Design Strength under Block Shear</td>
+<td class="asd">8181.00</td>
+<td class="lrfd">12271.50</td>
+</tr>
+</table><br>
+			
+				2945.2
+				1.0
+				7443.0
+				10710.0
+				2079.0
+				2.00
+				0.75
+				1472.58
+				2208.87						
+			
+		
+		
+			3622.5
+			[NA]
+			1.0
+			640
+			121.2
+			[NA]
+			[NA]
+			1.67
+			0.90
+			4338.32
+			6520.50
+		
+		
+			[NA]
+			333.9
+			[NA]
+			[NA]
+			1.67
+			0.90
+			399.87
+			601.00
+		
+		
+			
+				
+					[NA]
+					289.8
+					2
+					3605.7
+				
+				
+					[NA]
+					434.7
+					1
+					2375.5				
+				
+				
+				2.00
+				0.75
+				[NA]
+				[NA]
+			
+			
+				[NA]
+				2.00
+				0.75
+				[NA]
+				[NA]
+			
+			[NA]
+			[NA]
+		
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+	
+</body>
+</html>
+

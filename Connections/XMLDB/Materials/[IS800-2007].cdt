@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MaterialTable>
+    <Material>
+        <Classification>E165 (Fe290)</Classification>
+        <Fu>290</Fu>
+        <Fy>165</Fy>
+    </Material>
+    <Material>
+        <Classification>E250 (Fe410W)A</Classification>
+        <Fu>410</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>E250 (Fe410W)B</Classification>
+        <Fu>410</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>E250 (Fe410W)C</Classification>
+        <Fu>410</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>E300 (Fe440)</Classification>
+        <Fu>440</Fu>
+        <Fy>300</Fy>
+    </Material>
+    <Material>
+        <Classification>E350 (Fe490)</Classification>
+        <Fu>490</Fu>
+        <Fy>350</Fy>
+    </Material>
+    <Material>
+        <Classification>E410 (Fe540)</Classification>
+        <Fu>540</Fu>
+        <Fy>410</Fy>
+    </Material>
+    <Material>
+        <Classification>E450 (Fe570)D</Classification>
+        <Fu>570</Fu>
+        <Fy>450</Fy>
+    </Material>
+    <Material>
+        <Classification>E450 (Fe590)E</Classification>
+        <Fu>590</Fu>
+        <Fy>450</Fy>
+    </Material>
+</MaterialTable>

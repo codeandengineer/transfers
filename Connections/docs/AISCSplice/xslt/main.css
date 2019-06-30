@@ -1,0 +1,115 @@
+body{
+	max-width: 800px;
+	margin: 0 auto;
+	font-family: tahoma, sans-serif;
+	font-size: 0.65em;
+	/*line-height: 0.8em;*/
+}
+h3,h4{
+	text-decoration: underline;
+}
+/* Styles Targetting the Calculations*/
+table.calc{
+	border: none;
+	border-collapse: collapse;
+	width:90%;
+	box-sizing: border-box;
+}
+.calc tr{
+	width: 100%;
+	/*display: block;*/
+}
+
+td.f-left{
+	width: 60%;
+}
+td.f-main{
+	width: 15%;
+}
+td.f-equal{
+	width: 5%;
+}
+td.f-right{
+	width: 15%;
+}
+
+/* Styles Targetting the Summary Tables*/
+table.summary{
+	border: thin solid #219;
+	border-collapse: collapse;
+	width: 90%;
+	box-sizing: border-box;
+	align-content: center;
+	text-align: center;
+}
+.summary td{
+	border: thin solid black;
+	padding: 2px;
+}
+.summary tr{
+/*	display: flex;*/
+	width: 100%;
+}
+
+td.desc{
+	text-align: left;
+/*	flex: 6;*/
+	width: 60%;
+}
+td.asd{
+/*	flex: 3;*/
+	width: 20%;
+}
+td.lrfd{
+/*	flex: 3;*/
+	width: 20%;
+}
+
+/* Styles Targetting the Where Section Tables*/
+table.where{
+	border-collapse: collapse;
+	width: 50%;
+	box-sizing: border-box;
+	align-content: center;
+	text-align: left;
+}
+.where td{
+	padding: 2px;
+}
+.where tr{
+/*	display: flex;*/
+}
+
+td.where-left{
+	text-align: left;
+	text-indent:5%;
+/*	flex: 3;*/
+	width: 30%;
+}
+td.where-equal{
+/*	flex: 1;*/
+	width: 5%;
+}
+td.where-right{
+/*	flex: 6;*/
+	width: 65%;
+}
+
+span.h4-small{
+	font-size: 0.9em;
+	font-weight: normal;
+}
+
+@page{
+	size:a4;
+	margin: 30mm 10mm 30mm 20mm;
+	@top-center{
+		content: "Engineered Programming"
+	}
+	@bottom-center{
+		content: counter(page);
+	}
+}
+table{
+	page-break-inside: avoid;
+}

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MaterialTable>
+    <Material>
+        <Classification>A36</Classification>
+        <Fu>400</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>A53 Grade A</Classification>
+        <Fu>330</Fu>
+        <Fy>205</Fy>
+    </Material>
+    <Material>
+        <Classification>A53 Grade B</Classification>
+        <Fu>415</Fu>
+        <Fy>240</Fy>
+    </Material>
+    <Material>
+        <Classification>A500C Grade A</Classification>
+        <Fu>310</Fu>
+        <Fy>230</Fy>
+    </Material>
+    <Material>
+        <Classification>A500C Grade B</Classification>
+        <Fu>400</Fu>
+        <Fy>290</Fy>
+    </Material>
+    <Material>
+        <Classification>A500C Grade C</Classification>
+        <Fu>425</Fu>
+        <Fy>315</Fy>
+    </Material>
+    <Material>
+        <Classification>A500C Grade D</Classification>
+        <Fu>400</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>A500SR Grade A</Classification>
+        <Fu>310</Fu>
+        <Fy>270</Fy>
+    </Material>
+    <Material>
+        <Classification>A500SR Grade B</Classification>
+        <Fu>400</Fu>
+        <Fy>315</Fy>
+    </Material>
+    <Material>
+        <Classification>A500SR Grade C</Classification>
+        <Fu>425</Fu>
+        <Fy>345</Fy>
+    </Material>
+    <Material>
+        <Classification>A500SR Grade D</Classification>
+        <Fu>400</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>A501</Classification>
+        <Fu>400</Fu>
+        <Fy>248</Fy>
+    </Material>
+    <Material>
+        <Classification>A572 Grade 42</Classification>
+        <Fu>415</Fu>
+        <Fy>290</Fy>
+    </Material>
+    <Material>
+        <Classification>A572 Grade 50</Classification>
+        <Fu>450</Fu>
+        <Fy>345</Fy>
+    </Material>
+    <Material>
+        <Classification>A572 Grade 60</Classification>
+        <Fu>520</Fu>
+        <Fy>415</Fy>
+    </Material>
+    <Material>
+        <Classification>A572 Grade 65</Classification>
+        <Fu>550</Fu>
+        <Fy>450</Fy>
+    </Material>
+</MaterialTable>

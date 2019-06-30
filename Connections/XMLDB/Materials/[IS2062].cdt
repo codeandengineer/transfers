@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MaterialTable>
+    <Material>
+        <Classification>E250 A</Classification>
+        <Fu>410</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>E250 BR</Classification>
+        <Fu>410</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>E250 B0</Classification>
+        <Fu>410</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>E250 C</Classification>
+        <Fu>410</Fu>
+        <Fy>250</Fy>
+    </Material>
+    <Material>
+        <Classification>E275 A</Classification>
+        <Fu>430</Fu>
+        <Fy>275</Fy>
+    </Material>
+    <Material>
+        <Classification>E275 BR</Classification>
+        <Fu>430</Fu>
+        <Fy>275</Fy>
+    </Material>
+    <Material>
+        <Classification>E275 B0</Classification>
+        <Fu>430</Fu>
+        <Fy>275</Fy>
+    </Material>
+    <Material>
+        <Classification>E275 C</Classification>
+        <Fu>430</Fu>
+        <Fy>275</Fy>
+    </Material>
+    <Material>
+        <Classification>E300 A</Classification>
+        <Fu>440</Fu>
+        <Fy>300</Fy>
+    </Material>
+    <Material>
+        <Classification>E300 BR</Classification>
+        <Fu>440</Fu>
+        <Fy>300</Fy>
+    </Material>
+    <Material>
+        <Classification>E300 B0</Classification>
+        <Fu>440</Fu>
+        <Fy>300</Fy>
+    </Material>
+    <Material>
+        <Classification>E300 C</Classification>
+        <Fu>440</Fu>
+        <Fy>300</Fy>
+    </Material>
+    <Material>
+        <Classification>E350 A</Classification>
+        <Fu>490</Fu>
+        <Fy>350</Fy>
+    </Material>
+    <Material>
+        <Classification>E350 BR</Classification>
+        <Fu>490</Fu>
+        <Fy>350</Fy>
+    </Material>
+    <Material>
+        <Classification>E350 B0</Classification>
+        <Fu>490</Fu>
+        <Fy>350</Fy>
+    </Material>
+    <Material>
+        <Classification>E350 C</Classification>
+        <Fu>490</Fu>
+        <Fy>350</Fy>
+    </Material>
+    <Material>
+        <Classification>E410 A</Classification>
+        <Fu>540</Fu>
+        <Fy>410</Fy>
+    </Material>
+    <Material>
+        <Classification>E410 BR</Classification>
+        <Fu>540</Fu>
+        <Fy>410</Fy>
+    </Material>
+    <Material>
+        <Classification>E410 B0</Classification>
+        <Fu>540</Fu>
+        <Fy>410</Fy>
+    </Material>
+    <Material>
+        <Classification>E410 C</Classification>
+        <Fu>540</Fu>
+        <Fy>410</Fy>
+    </Material>
+    <Material>
+        <Classification>E450 A</Classification>
+        <Fu>570</Fu>
+        <Fy>450</Fy>
+    </Material>
+    <Material>
+        <Classification>E450 BR</Classification>
+        <Fu>570</Fu>
+        <Fy>450</Fy>
+    </Material>
+    <Material>
+        <Classification>E550 A</Classification>
+        <Fu>650</Fu>
+        <Fy>550</Fy>
+    </Material>
+    <Material>
+        <Classification>E550 BR</Classification>
+        <Fu>650</Fu>
+        <Fy>550</Fy>
+    </Material>
+    <Material>
+        <Classification>E600 A</Classification>
+        <Fu>730</Fu>
+        <Fy>600</Fy>
+    </Material>
+    <Material>
+        <Classification>E600 BR</Classification>
+        <Fu>730</Fu>
+        <Fy>600</Fy>
+    </Material>
+    <Material>
+        <Classification>E650 A</Classification>
+        <Fu>780</Fu>
+        <Fy>650</Fy>
+    </Material>
+    <Material>
+        <Classification>E650BR</Classification>
+        <Fu>780</Fu>
+        <Fy>650</Fy>
+    </Material>
+</MaterialTable>

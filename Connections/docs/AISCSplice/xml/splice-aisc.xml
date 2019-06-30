@@ -1,0 +1,189 @@
+
+<connection name="splice" design-code="aisc-360-05">
+	<job-info>
+		<project-name>Covering Shed for Storage Area</project-name>
+		<title>Connection Design Calculation Report</title>
+		<doc-number>1705-C-S-004</doc-number>
+		<client>Elevated Terrains</client>
+		<rev>A</rev>
+		<rev-date>11-Jul-2017</rev-date>
+		<originator>Srinivas</originator>
+		<checker>Srinivas</checker>
+		<approver>Srinivas</approver>
+	</job-info>
+	<input-data></input-data>
+	<unit-system>SI</unit-system>
+	<component name="bolts">
+		<check name="tension">
+			<nominal-strength>551.3</nominal-strength>
+			<omega>2.00</omega>
+			<phi>0.75</phi>
+			<asd-strength>257.67</asd-strength>
+			<lrfd-strength>413.51</lrfd-strength>
+		</check>
+		<check name="shear">
+			<nominal-strength>646.1</nominal-strength>
+			<omega>2.00</omega>
+			<phi>0.75</phi>
+			<asd-strength>323.03</asd-strength>
+			<lrfd-strength>484.55</lrfd-strength>	
+		</check>
+		<check name="combined">
+			<nominal-strength>551.3</nominal-strength>
+			<Fdashnt>780.0</Fdashnt>
+			<frv>0.0</frv>
+			<omega>2.00</omega>
+			<phi>0.75</phi>
+			<asd-strength>257.67</asd-strength>
+			<lrfd-strength>413.51</lrfd-strength>				
+		</check>
+		<check name="bearing">
+			<element name="plates">
+				<nominal-strength deformation-criteria="yes">[NA]</nominal-strength>
+				<nominal-strength deformation-criteria="no">12150.0</nominal-strength>
+			</element>
+			<element name="profile">
+				<nominal-strength deformation-criteria="yes">[NA]</nominal-strength>
+				<nominal-strength deformation-criteria="no">2187.0</nominal-strength>
+			</element>
+			<bearing-length>413.5</bearing-length>
+			<omega>2.00</omega>
+			<phi>0.75</phi>
+			<asd-strength>1093.50</asd-strength>
+			<lrfd-strength>1640.25</lrfd-strength>						
+		</check>
+	</component>
+	<component name="plate-web">
+		<check name="tensile-yielding">
+			<nominal-strength>7245.0</nominal-strength>
+			<omega>1.67</omega>
+			<phi>0.90</phi>
+			<asd-strength>4338.32</asd-strength>
+			<lrfd-strength>6520.50</lrfd-strength>			
+		</check>
+		<check name="tensile-rupture">
+			<nominal-strength>6480.0</nominal-strength>
+			<omega>2.00</omega>
+			<phi>0.75</phi>
+			<asd-strength>3240.0</asd-strength>
+			<lrfd-strength>4860.0</lrfd-strength>					
+		</check>
+		<check name="shear-yielding">
+			<nominal-strength>4347.0</nominal-strength>
+			<omega>1.50</omega>
+			<phi>1.00</phi>
+			<asd-strength>2898.0</asd-strength>
+			<lrfd-strength>4347.0</lrfd-strength>					
+		</check>
+		<check name="shear-rupture">
+			<nominal-strength>3888.0</nominal-strength>
+			<omega>2.00</omega>
+			<phi>0.75</phi>
+			<asd-strength>1944.0</asd-strength>
+			<lrfd-strength>2916.0</lrfd-strength>					
+		</check>
+		<check name="block-shear">
+			<element name="plate">
+				<nominal-strength>16362.0</nominal-strength>
+				<ubs>1.0</ubs>
+				<anv>41350.0</anv>
+				<agv>59500.0</agv>
+				<ant>11550.0</ant>
+				<omega>2.00</omega>
+				<phi>0.75</phi>
+				<asd-strength>8181.00</asd-strength>
+				<lrfd-strength>12271.50</lrfd-strength>
+			</element>
+			<element name="profile">
+				<nominal-strength>2945.2</nominal-strength>
+				<ubs>1.0</ubs>
+				<anv>7443.0</anv>
+				<agv>10710.0</agv>
+				<ant>2079.0</ant>
+				<omega>2.00</omega>
+				<phi>0.75</phi>
+				<asd-strength>1472.58</asd-strength>
+				<lrfd-strength>2208.87</lrfd-strength>						
+			</element>
+		</check>
+		<check name="compression">
+			<nominal-strength case="case-a">3622.5</nominal-strength>
+			<nominal-strength case="case-b">[NA]</nominal-strength>
+			<k>1.0</k>
+			<l>640</l>
+			<r>121.2</r>
+			<fe>[NA]</fe>
+			<fcrp>[NA]</fcrp>
+			<omega>1.67</omega>
+			<phi>0.90</phi>
+			<asd-strength>4338.32</asd-strength>
+			<lrfd-strength>6520.50</lrfd-strength>
+		</check>
+		<check name="flexure">
+			<nominal-strength case="case-a">[NA]</nominal-strength>
+			<nominal-strength case="case-b">333.9</nominal-strength>
+			<nominal-strength case="case-c">[NA]</nominal-strength>
+			<fcr>[NA]</fcr>
+			<omega>1.67</omega>
+			<phi>0.90</phi>
+			<asd-strength>399.87</asd-strength>
+			<lrfd-strength>601.00</lrfd-strength>
+		</check>
+		<check name="weld">
+			<criteria name="weld-filler-metal">
+				<element name="longitudinal">
+					<nominal-strength>[NA]</nominal-strength>
+					<fnw>289.8</fnw>
+					<nwf>2</nwf>
+					<awe>3605.7</awe>
+				</element>
+				<element name="transverse">
+					<nominal-strength>[NA]</nominal-strength>
+					<fnw>434.7</fnw>
+					<nwf>1</nwf>
+					<awe>2375.5</awe>				
+				</element>
+				<nominal-strength></nominal-strength>
+				<omega>2.00</omega>
+				<phi>0.75</phi>
+				<asd-strength>[NA]</asd-strength>
+				<lrfd-strength>[NA]</lrfd-strength>
+			</criteria>
+			<criteria name="base-metal">
+				<nominal-strength>[NA]</nominal-strength>
+				<omega>2.00</omega>
+				<phi>0.75</phi>
+				<asd-strength>[NA]</asd-strength>
+				<lrfd-strength>[NA]</lrfd-strength>
+			</criteria>
+			<asd-strength>[NA]</asd-strength>
+			<lrfd-strength>[NA]</lrfd-strength>
+		</check>
+	</component>
+	
+	<component name="plate-flange-outer">
+		<check name="tensile-yielding"></check>
+		<check name="tensile-rupture"></check>
+		<check name="shear-yielding"></check>
+		<check name="shear-rupture"></check>
+		<check name="block-shear-plate"></check>
+		<check name="block-shear-profile"></check>
+		<check name="compression"></check>
+		<check name="flexure"></check>
+		<check name="weld-filler-metal"></check>
+		<check name="base-metal"></check>		
+	</component>
+	
+	<component name="plate-flange-inner">
+		<check name="tensile-yielding"></check>
+		<check name="tensile-rupture"></check>
+		<check name="shear-yielding"></check>
+		<check name="shear-rupture"></check>
+		<check name="block-shear-plate"></check>
+		<check name="block-shear-profile"></check>
+		<check name="compression"></check>
+		<check name="flexure"></check>
+		<check name="weld-filler-metal"></check>
+		<check name="base-metal"></check>		
+	</component>
+</connection>

@@ -1,0 +1,55 @@
+
+<connection name="splice" design-code="aisc-360-05">
+	<job-info></job-info>
+	<input-data></input-data>
+	<component name="bolts">
+		<check name="tension">
+		</check>
+		<check name="shear">
+		</check>
+		<check name="combined">
+		</check>
+		<check name="bearing-plate">
+		</check>
+		<check name="bearing-profile">
+		</check>
+	</component>
+	<component name="plate-web">
+		<check name="tensile-yielding"></check>
+		<check name="tensile-rupture"></check>
+		<check name="shear-yielding"></check>
+		<check name="shear-rupture"></check>
+		<check name="block-shear-plate"></check>
+		<check name="block-shear-profile"></check>
+		<check name="compression"></check>
+		<check name="flexure"></check>
+		<check name="weld-filler-metal"></check>
+		<check name="base-metal"></check>
+	</component>
+	
+	<component name="plate-flange-outer">
+		<check name="tensile-yielding"></check>
+		<check name="tensile-rupture"></check>
+		<check name="shear-yielding"></check>
+		<check name="shear-rupture"></check>
+		<check name="block-shear-plate"></check>
+		<check name="block-shear-profile"></check>
+		<check name="compression"></check>
+		<check name="flexure"></check>
+		<check name="weld-filler-metal"></check>
+		<check name="base-metal"></check>		
+	</component>
+	
+	<component name="plate-flange-inner">
+		<check name="tensile-yielding"></check>
+		<check name="tensile-rupture"></check>
+		<check name="shear-yielding"></check>
+		<check name="shear-rupture"></check>
+		<check name="block-shear-plate"></check>
+		<check name="block-shear-profile"></check>
+		<check name="compression"></check>
+		<check name="flexure"></check>
+		<check name="weld-filler-metal"></check>
+		<check name="base-metal"></check>		
+	</component>
+</connection>
